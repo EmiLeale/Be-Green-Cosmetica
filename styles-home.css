@@ -10,30 +10,291 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+    width: 100dvw;
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    width: 100dvw;
     --font-color: #f0f0f0;
+    --font-black-color: #0f0f0f;
     --brand-dark-green: #013d24;
     --brand-soft-green: #00a47b;
-    background-color: black;
+    --brand-dark-green-opacity: #013d2455;
+    background-color: var(--font-color);
+    
 }
-.png-icons {
-    height: 2rem;
+.material-icons {
+    font-size: 1.4rem !important;
 }
 
+
+/* ------- HEADER STARTS ------- */
 header {
-    height: 17dvh;
+    height: 5.5rem;
     width: 100%;
-    background-color: red;
+    display: grid;
+    grid-template-rows: 1.5rem 4rem;
+    background-color: var(--font-color);
+    box-shadow: 0 0.1px 30px -10px var(--font-black-color);
+    z-index: 10;
 }
+header .ofertas {
+    height: 1.5rem;
+    width: 100%;
+    background-color: var(--brand-dark-green);
+}
+header .ofertas h2 {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase; 
+    color: var(--font-color);
+}
+header .oficial-header {
+    height: 100%;
+    width: 100%;
+    background-color: var(--font-color);
+    display: grid;
+    grid-template-columns: 40dvw 60dvw;
+    grid-template-rows: 1fr;
+}
+header .oficial-header .oficial-header__h1-container {
+    width: 40dvw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    
+}
+header .oficial-header .oficial-header__h1-container__ah1 {
+    text-decoration: none;
+    cursor:default;
+}
+header .oficial-header h1 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: var(--font-black-color);
+    text-wrap: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    padding-left: 15dvw;
+}
+
+header .oficial-header .oficial-header__nav-bar {
+    width: 60dvw;
+    height: 100%;
+    background-color: var(--font-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    padding-right: 15dvw;
+}
+
+header .oficial-header .oficial-header__nav-bar .oficial-header__nav-bar__ah3 {
+    margin: 0 0.8rem;
+    height: 26px;
+    color: var(--font-black-color);
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+header .oficial-header .oficial-header__nav-bar .oficial-header__nav-bar__ah3:hover, header .oficial-header .oficial-header__nav-bar .oficial-header__nav-bar__ah3:focus, header .oficial-header .oficial-header__nav-bar .oficial-header__nav-bar__ah3:active {
+    border-bottom: 1px solid var(--font-black-color);
+}
+header .oficial-header .oficial-header__nav-bar h3 {
+    color: var(--font-black-color);
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin: 0;
+    
+}
+header .oficial-header .oficial-header__nav-bar a:last-of-type {
+    padding: 0 0.8rem;
+    height: 26px;
+    color: var(--font-black-color);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .oficial-header .oficial-header__nav-bar a .material-icons {
+    color: var(--font-color);
+    text-shadow:
+    1px 1px 0 var(--font-black-color), /* superior derecha */
+    -1px 1px 0 var(--font-black-color), /* superior izquierda */
+    -1px -1px 0 var(--font-black-color), /* inferior izquierda */
+    1px -1px 0 var(--font-black-color); /* inferior derecha */
+}
+
+header .oficial-header__checkbox-button {
+    display: none;
+}
+
+/* ------- HEADER ENDS ------- */
+
+/* ------- MEDIA QUERIES STARTS ------- */
+@media (max-width: 900px) {
+    body {
+        background-color: white;
+    }
+    header {
+        height: 5.5rem;
+        grid-template-rows: 1.5rem 4rem;
+    }
+    header .oficial-header {
+        height: 4rem;
+        grid-template-columns: 80dvw 20dvw;
+        grid-template-rows: 4rem;
+        position: relative;
+        
+    }
+    header:has(input[type="checkbox"]:checked) .oficial-header {
+        height: 4rem;
+    }
+    header .oficial-header .oficial-header__h1-container {
+        width: 80dvw;
+        align-items: center;
+        height: 4rem;
+        
+    }
+    header .oficial-header .oficial-header__nav-bar {
+        display: none;
+        
+    }
+    header .oficial-header h1 {
+        width: 100%;
+        font-size: 1.5rem;
+        margin-left: 7dvw;
+        padding: 0;
+    }
+    header .oficial-header__checkbox-button {
+        width: 20dvw;
+        height: 4rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    header .oficial-header__checkbox-button__checkbox-container {
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        position: relative;
+        padding: 0;
+        margin-right: 7dvw;
+        z-index: 10;
+    }
+    header .oficial-header__checkbox-button__checkbox-container:hover {
+        background-color: var(--brand-dark-green-opacity);
+    }
+    header .oficial-header__checkbox-button input {
+        position: absolute;
+        top: 0;
+        margin: 0;
+        visibility: hidden;
+    }
+    header .oficial-header .oficial-header__nav-bar .oficial-header__nav-bar__ah3:hover, header .oficial-header .oficial-header__nav-bar .oficial-header__nav-bar__ah3:focus, header .oficial-header .oficial-header__nav-bar .oficial-header__nav-bar__ah3:active {
+        border-bottom: none;
+    }
+    header:has(input[type="checkbox"]:checked) .oficial-header__nav-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100dvw;
+        height: 2rem;
+        padding: 0;
+        position: absolute;
+        top: 3rem;
+        background-color: var(--font-color);
+        animation: aparecer .5s ease both;
+        
+    }
+    
+
+}
+
+@media (max-height: 365px), (max-width: 420px) {
+    header {
+        height: 4rem;
+        grid-template-rows: 4rem;
+    }
+    header .ofertas {
+        display: none;
+        
+    }
+}
+
+/* ------- MEDIA QUERIES ENDS ------- */
+
+
+/* ------- ANIMATIONS STARTS ------- */
+
+@keyframes aparecer {
+    0% {
+        left: -500px;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+/* ------- ANIMATIONS ENDS ------- */
+
+/* ------- PHOTOSCROLL STARTS ------- */
+
 .photoscroll {
-    height: 80dvh;
-    width: 100%;
-    background-color: blue;
-    border: 1px solid black;
+    width: 80%; 
+    overflow: hidden; 
+    margin: 0 auto;
 }
+.photoscroll__container {
+    position: relative; 
+    width: 400%;
+    font-size: 0; 
+    
+    animation: 30s slidy infinite; 
+}
+.photoscroll .photoscroll__container figure {
+    width: 25%; 
+    height: auto;
+    display: inline-block;  
+    position: inherit;
+    margin: 0;
+}
+.photoscroll .photoscroll__container__img {
+    width: 100%; 
+    height: auto;
+    cursor: pointer;
+}
+
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+/* ------- PHOTOSCROLL ENDS ------- */
+
+
+
+
 .categorias {
     height: 60dvh;
     width: 100%;
