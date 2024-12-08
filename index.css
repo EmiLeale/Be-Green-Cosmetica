@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: 'Montserrat';
     src: url(Montserrat/Montserrat-VariableFont_wght.ttf);
@@ -18,15 +20,19 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+
+    
     --font-color: #f0f0f0;
     --font-black-color: #0f0f0f;
-    --brand-dark-green: #013d24;
+    --brand-dark-green: #013d24dd;
     --brand-soft-green: #00a47b;
+    --brand-soft-green-opacitiy: #00a47b45;
     --brand-dark-green-opacity: #013d2455;
+    --brand-third-color: #ffc300;
+    --brand-third-color-opacity: #ffc30088;
     background-color: var(--font-color);
     
 }
-
 .material-icons {
     font-size: 1.4rem !important;
 }
@@ -209,6 +215,7 @@ header .oficial-header__checkbox-button {
 }
 .categorias__selectores {
     width: 70%;
+    max-width: 1200px;
     height: 3rem;
     background-color: transparent;
     display: flex;
@@ -260,8 +267,6 @@ header .oficial-header__checkbox-button {
 
 
 /* ------- DESTACADOS STARTS ------- */
-
-
 .destacados {
     max-width: 100%;
     height: 100%;
@@ -274,7 +279,7 @@ header .oficial-header__checkbox-button {
 
 .destacados .destacados__container {
     width: 70%;
-    max-width: 1000px;
+    max-width: 1200px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -368,6 +373,201 @@ header .oficial-header__checkbox-button {
 
 
 /* ------- DESTACADOS ENDS ------- */
+
+/* ------- NOSOTROS STARTS ------- */
+
+.nosotros {
+    margin: 5rem 0;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.nosotros > div {
+    width: 70%;
+    max-width: 1200px;
+    aspect-ratio: 16 / 5;
+    display: flex;
+    justify-content: center;
+    object-fit: contain;
+    overflow: hidden;
+    margin: 0;
+    
+}
+.nosotros > div:hover {
+    opacity: 1;
+    z-index: 10;
+}
+.nosotros .nosotros__about-us {
+    border-radius: 40%;
+    background-color: var(--brand-dark-green);
+    box-shadow: 3px 3px 10px color-mix(in oklab, var(--brand-dark-green) 50%, var(--font-black-color) 50%);
+    opacity: 0.6;
+    animation: about-us linear both;
+    animation-timeline: view(block);
+    animation-range: cover 15% cover 80%;
+    
+}
+@keyframes about-us {
+    0% { 
+    }
+    30% {
+        scale: 1.2;
+        opacity: 1;
+        border-radius: 8% 38% 45% 23%;
+    }
+    100% {
+        scale: 1.1;
+        opacity: 0.8;
+    }
+} 
+.nosotros .nosotros__our-mission {
+    border-radius: 40%;
+    background-color: var(--brand-soft-green);
+    box-shadow: 3px 3px 10px color-mix(in oklab, var(--brand-soft-green) 70%, var(--font-black-color) 30%);
+    opacity: .6;
+    animation: our-mission linear both;
+    animation-timeline: view(block);
+    animation-range: cover 15% cover 80%;
+}
+@keyframes our-mission {
+    0% { 
+    }
+    30% {
+        scale: 1.2;
+        opacity: 1;
+    }
+    100% {
+        border-radius: 35% 10% 18% 25%;
+        scale: 1.1;
+        opacity: .8;
+    }
+} 
+.nosotros .nosotros__our-history {
+    background-color: var(--brand-third-color);      
+    border-radius: 40%;
+    box-shadow: 5px 5px 10px color-mix(in oklab, var(--brand-third-color) 50%, var(--font-black-color) 50%);
+    opacity: .6;
+    animation: our-history linear both;
+    animation-timeline: view(block);
+    animation-range: cover 15% cover 80%;
+}
+@keyframes our-history {
+    0% { 
+    }
+    30% {
+        scale: 1.2;
+        opacity: 1;
+    }
+    100% {
+        scale: 1.1;
+        opacity: .8;
+        border-radius: 12% 46% 35% 15%;
+    }
+} 
+.nosotros div span {
+    width: 50%;
+    display: flex;
+}
+.nosotros div:first-of-type span, .nosotros div:last-of-type span {
+    justify-content: end;
+
+}
+.nosotros div span img {
+    width: 90%;
+    aspect-ratio: 16/9;
+    
+    transition: all 1s cubic-bezier(0,.84,.75,.82);
+}
+
+.nosotros div:hover span img {
+    width: 100%;
+}
+.nosotros .nosotros__about-us span img {
+    border-radius: 45% 40% 30% 18%;
+}
+.nosotros .nosotros__our-mission span img {
+    border-radius: 15% 20% 33% 25%;
+}
+.nosotros .nosotros__our-history span img {
+    border-radius: 38% 25% 18% 26%;
+}
+.nosotros div div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.nosotros .nosotros__about-us div h4 {
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 300;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+    transform: translateX(10%);
+    
+    transition: all 1s cubic-bezier(0,.84,.75,.82);
+}
+.nosotros .nosotros__about-us:hover div h4 {
+    transform: translateX(50%);
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.nosotros .nosotros__about-us div p {
+    font-size: 0.9rem;
+    width: 80%;
+    transform: translateX(25%);
+    transition: all 1.5s cubic-bezier(0,.84,.75,.82);
+    
+}
+.nosotros .nosotros__about-us:hover div p {
+    transform: translateX(10%);
+}
+.nosotros div div h5 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 300;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+    transition: all 1s cubic-bezier(0,.84,.75,.82);
+}
+.nosotros div:hover div h5 {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.nosotros div div p {
+    font-size: 0.9rem;
+    width: 80%;
+    text-wrap: pretty;
+    text-align: start;
+    transition: all .5s cubic-bezier(0,.84,.75,.82);
+}
+.nosotros div:nth-of-type(2):hover div h5 {
+
+    transform: translateX(-10%);
+}
+.nosotros div:nth-of-type(2):hover div p {
+    transform: translateX(10%);
+}
+.nosotros div:last-of-type:hover div h5 {
+    transform: translateX(15%);
+}
+.nosotros div:last-of-type div p {
+    transform: translateX(25%);
+}
+
+.nosotros div:last-of-type:hover div p {
+    transform: translateX(5%);
+}
+
+/* ------- NOSOTROS ENDS ------- */
 
 /* ------- MEDIA QUERIES STARTS ------- */
 @media (max-width: 900px) {
@@ -486,6 +686,80 @@ header .oficial-header__checkbox-button {
     .destacados .destacados__container .destacados__container__div-img p {
         font-size: 0.9rem;
     }
+    .nosotros {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .nosotros > div {
+        height: 350px;
+        width: 100%;
+        aspect-ratio:  5 / 16;
+        margin: -1% 0;
+    }
+    @keyframes about-us {
+        0% { 
+        }
+        30% {
+            scale: 1;
+            opacity: 1;
+            aspect-ratio: 5 / 16;
+        }
+        100% {
+            scale: 1;
+        }
+    } 
+    @keyframes our-mission {
+        0% { 
+        }
+        30% {
+            scale: 1;
+            opacity: 1;
+            aspect-ratio: 5 / 16;
+        }
+        100% {
+            scale: 1;
+        }
+    }
+    @keyframes our-history {
+        0% { 
+        }
+        30% {
+            scale: 1;
+            opacity: 1;
+            aspect-ratio: 5 / 16;
+        }
+        100% {
+            scale: 1;
+        }
+    } 
+    .nosotros div span {
+        max-width: 480px;
+    }
+    .nosotros .nosotros__about-us div h4 {
+        transform: translateX(30%);
+    }
+    .nosotros .nosotros__about-us div p {
+        transform: translateX(25%);
+    }
+    .nosotros div:nth-of-type(2):hover div h5 {
+        transform: translateX(-5%);
+    }
+    .nosotros div:nth-of-type(2) div p {
+        transform: translateX(-15%);
+    }
+    .nosotros div:nth-of-type(2):hover div p {
+        transform: translateX(5%);
+    }
+    .nosotros div:last-of-type:hover div h5 {
+        transform: translateX(15%);
+    }
+    .nosotros div:last-of-type div p {
+        transform: translateX(25%);
+    }
+    .nosotros div:last-of-type:hover div p {
+        transform: translateX(10%);
+    }
 }
 
 @media (max-width: 550px) {
@@ -514,6 +788,133 @@ header .oficial-header__checkbox-button {
     }
     
 }
+@media (max-width:650px) {
+    
+    .nosotros > div {
+        position: relative;
+        width: 100%;
+        height: 400px;
+    }
+    .nosotros div span {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        transition: all 1s cubic-bezier(0,.84,.75,.82);
+    }
+    .nosotros div span img{
+        width: 100%;
+        opacity: 0.5;
+        transition: all 1s cubic-bezier(0,.84,.75,.82);
+
+    }
+    
+    .nosotros div:hover span img {
+        opacity: 1;
+    }
+    .nosotros div:first-of-type:hover span {
+        left: 5%;
+    }
+    .nosotros div:nth-child(2) span {
+        left: 35%;
+    }
+    .nosotros div:nth-child(2):hover span {
+        left: 30%;
+    }
+    
+    .nosotros div:last-of-type span {
+        top: 60%;
+    }
+    
+    .nosotros div:hover span{ 
+        top: 36%;
+    }   
+    .nosotros div:last-of-type:hover span {
+        left: 3%;
+        top: 42%;
+    }
+    .nosotros div div {
+        width: 80%;
+        height: 60%;
+        
+        z-index: 10;
+    }
+    .nosotros .nosotros__about-us div h4 {
+        width: 100%;
+        height: 40%;
+        padding-top: 1rem;
+        padding-bottom: 0.5rem;
+        transform: translateX(30%);
+    }
+    .nosotros .nosotros__about-us:hover div h4 {
+        transform: translateX(35%);
+        
+        font-size: 1.3rem;
+        font-weight: 300;
+    }
+    .nosotros .nosotros__about-us div p {
+        height: 60%;
+        width: 90%;
+        transform: translateX(10%);
+        transform: translateY(-15%);
+    }
+    .nosotros .nosotros__about-us:hover div p {
+        transform: translateX(5%);
+        transform: translateY(-35%);
+    }
+    .nosotros div div h5 {
+        height: 40%;
+        width: 100%;
+    }
+    .nosotros div:hover div h5 {
+        font-size: 1rem;
+        font-weight: 300;
+        
+    }
+    .nosotros div:nth-of-type(2) div h5 {
+        transform: translateX(15%);
+        align-items: center;
+    }
+    .nosotros div:nth-of-type(2):hover div h5 {
+        transform: translateX(-10%);
+        transform: translateY(20%);
+    }
+    
+    .nosotros div:nth-of-type(2) div p {
+        transform: translateX(10%);
+        
+        height: 60%;
+        
+        transform: translateY(10%);
+    }
+    .nosotros div:nth-of-type(2):hover div p {
+        transform: translateX(-20%);
+        
+        transform: translateY(-20%);
+    }
+    
+    .nosotros div:last-of-type div h5 {
+        align-items: center;
+        transform: translateX(-5%);
+        
+    }
+    .nosotros div:last-of-type:hover div h5 {
+        transform: translateX(15%);
+        transform: translateY(-10%);
+    }
+    .nosotros div:last-of-type div p {
+        transform: translateX(15%);
+        height: 60%;
+        
+    }
+
+    .nosotros div:last-of-type:hover div p {
+        transform: translateX(5%);
+        
+        transform: translateY(-35%);
+    }
+}
+
 @media (max-width: 380px) {
     .categorias__selectores {
         position: relative;
@@ -572,14 +973,6 @@ header .oficial-header__checkbox-button {
 /* ------- ANIMATIONS ENDS ------- */
 
 
-
-.nosotros {
-    height: 60dvh;
-    width: 100%;
-    background-color: blue;
-    
-    border: 1px solid black;
-}
 footer {
     height: 30dvh;
     width: 100%;
